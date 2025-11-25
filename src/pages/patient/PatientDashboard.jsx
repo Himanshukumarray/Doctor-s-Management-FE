@@ -7,16 +7,13 @@ export default function PatientDashboard({ patientName, appointmentsCount, bills
 
   return (
     <div className="space-y-6">
-      {/* Welcome Section */}
       <div className="bg-gradient-to-r from-blue-500 to-blue-600 text-white p-8 rounded-lg shadow-lg">
         <h1 className="text-3xl font-bold mb-2">Welcome, {patientName || 'Patient'}!</h1>
         <p className="text-blue-100">Manage your appointments and healthcare journey</p>
       </div>
 
-      {/* Quick Actions */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
 
-        {/* FIND DOCTORS */}
         <div
           onClick={() => navigate("/patient/available-doctors")}
           className="bg-white p-6 rounded-lg shadow hover:shadow-lg transition cursor-pointer"
