@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Eye, EyeOff, CheckCircle, XCircle, User, Stethoscope, AlertCircle, ArrowRight } from "lucide-react";
+import { useNavigate, Link } from "react-router-dom";
 
 const SignupPage = () => {
   const [step, setStep] = useState(1);
@@ -74,7 +75,7 @@ const SignupPage = () => {
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
-    
+
     if (touched[name]) {
       const error = validateField(name, value);
       setErrors({ ...errors, [name]: error });
@@ -97,7 +98,7 @@ const SignupPage = () => {
   const handleContinueToRoleSelection = () => {
     const step1Fields = ["name", "email", "password"];
     const newErrors = {};
-    
+
     step1Fields.forEach(field => {
       const error = validateField(field, formData[field]);
       if (error || !formData[field]) {
@@ -117,7 +118,7 @@ const SignupPage = () => {
   const handleSubmit = async () => {
     const requiredFields = ["age", "gender", "phone", "address"];
     const newErrors = {};
-    
+
     requiredFields.forEach(field => {
       const error = validateField(field, formData[field]);
       if (error || !formData[field]) {
@@ -181,7 +182,7 @@ const SignupPage = () => {
             </div>
             <h2 className="text-4xl font-bold mb-4">My Discounted Labs</h2>
             <p className="text-blue-100 text-lg mb-8">Join our healthcare platform today</p>
-            
+
             <div className="flex items-center justify-center gap-3 mb-8">
               <div className={`flex items-center justify-center w-10 h-10 rounded-full ${step >= 1 ? 'bg-white text-blue-600' : 'bg-white/20 text-white'} font-semibold`}>
                 {step > 1 ? <CheckCircle className="w-5 h-5" /> : '1'}
@@ -237,9 +238,8 @@ const SignupPage = () => {
                         onChange={handleChange}
                         onBlur={handleBlur}
                         placeholder="John Doe"
-                        className={`w-full pl-4 pr-10 py-3 border-2 rounded-xl transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent ${
-                          touched.name && errors.name ? 'border-red-500 bg-red-50' : 'border-gray-200 hover:border-gray-300'
-                        }`}
+                        className={`w-full pl-4 pr-10 py-3 border-2 rounded-xl transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent ${touched.name && errors.name ? 'border-red-500 bg-red-50' : 'border-gray-200 hover:border-gray-300'
+                          }`}
                       />
                       {touched.name && (
                         <div className="absolute right-3 top-1/2 -translate-y-1/2">
@@ -271,9 +271,8 @@ const SignupPage = () => {
                         onChange={handleChange}
                         onBlur={handleBlur}
                         placeholder="john@example.com"
-                        className={`w-full pl-4 pr-10 py-3 border-2 rounded-xl transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent ${
-                          touched.email && errors.email ? 'border-red-500 bg-red-50' : 'border-gray-200 hover:border-gray-300'
-                        }`}
+                        className={`w-full pl-4 pr-10 py-3 border-2 rounded-xl transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent ${touched.email && errors.email ? 'border-red-500 bg-red-50' : 'border-gray-200 hover:border-gray-300'
+                          }`}
                       />
                       {touched.email && (
                         <div className="absolute right-3 top-1/2 -translate-y-1/2">
@@ -292,7 +291,7 @@ const SignupPage = () => {
                       </p>
                     )}
                   </div>
-                  
+
                   <div className="relative">
                     <label className="block text-sm font-medium text-gray-700 mb-1">
                       Password <span className="text-red-500">*</span>
@@ -305,9 +304,8 @@ const SignupPage = () => {
                         onChange={handleChange}
                         onBlur={handleBlur}
                         placeholder="••••••••"
-                        className={`w-full pl-4 pr-10 py-3 border-2 rounded-xl transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent ${
-                          touched.password && errors.password ? 'border-red-500 bg-red-50' : 'border-gray-200 hover:border-gray-300'
-                        }`}
+                        className={`w-full pl-4 pr-10 py-3 border-2 rounded-xl transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent ${touched.password && errors.password ? 'border-red-500 bg-red-50' : 'border-gray-200 hover:border-gray-300'
+                          }`}
                       />
                       <button
                         type="button"
@@ -323,9 +321,8 @@ const SignupPage = () => {
                           {[1, 2, 3, 4, 5].map((level) => (
                             <div
                               key={level}
-                              className={`h-1 flex-1 rounded-full transition-all duration-300 ${
-                                level <= passwordStrength.strength ? passwordStrength.color : 'bg-gray-200'
-                              }`}
+                              className={`h-1 flex-1 rounded-full transition-all duration-300 ${level <= passwordStrength.strength ? passwordStrength.color : 'bg-gray-200'
+                                }`}
                             />
                           ))}
                         </div>
@@ -349,13 +346,26 @@ const SignupPage = () => {
                     Continue
                     <ArrowRight className="w-5 h-5" />
                   </button>
+
+
+                  <div className="mt-8 text-center">
+                    <p className="text-sm text-gray-600">
+                      Back to {" "}
+                      <Link
+                        to="/"
+                        className="font-medium text-indigo-600 hover:text-indigo-500"
+                      >
+                        Sign in
+                      </Link>
+                    </p>
+                  </div>
                 </div>
               )}
 
               {step === 2 && (
                 <div className="space-y-6" style={{ animation: 'fadeIn 0.3s ease-out' }}>
                   <p className="text-center text-gray-600">Select your account type to continue</p>
-                  
+
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <button
                       onClick={() => handleRoleSelect("PATIENT")}
@@ -415,9 +425,8 @@ const SignupPage = () => {
                             onChange={handleChange}
                             onBlur={handleBlur}
                             placeholder="25"
-                            className={`w-full pl-4 pr-10 py-3 border-2 rounded-xl transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent ${
-                              touched.age && errors.age ? 'border-red-500 bg-red-50' : 'border-gray-200 hover:border-gray-300'
-                            }`}
+                            className={`w-full pl-4 pr-10 py-3 border-2 rounded-xl transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent ${touched.age && errors.age ? 'border-red-500 bg-red-50' : 'border-gray-200 hover:border-gray-300'
+                              }`}
                           />
                           {touched.age && (
                             <div className="absolute right-3 top-1/2 -translate-y-1/2">
@@ -449,9 +458,8 @@ const SignupPage = () => {
                             onChange={handleChange}
                             onBlur={handleBlur}
                             placeholder="Male/Female/Other"
-                            className={`w-full pl-4 pr-10 py-3 border-2 rounded-xl transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent ${
-                              touched.gender && errors.gender ? 'border-red-500 bg-red-50' : 'border-gray-200 hover:border-gray-300'
-                            }`}
+                            className={`w-full pl-4 pr-10 py-3 border-2 rounded-xl transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent ${touched.gender && errors.gender ? 'border-red-500 bg-red-50' : 'border-gray-200 hover:border-gray-300'
+                              }`}
                           />
                           {touched.gender && (
                             <div className="absolute right-3 top-1/2 -translate-y-1/2">
@@ -484,9 +492,8 @@ const SignupPage = () => {
                           onChange={handleChange}
                           onBlur={handleBlur}
                           placeholder="+1 (555) 123-4567"
-                          className={`w-full pl-4 pr-10 py-3 border-2 rounded-xl transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent ${
-                            touched.phone && errors.phone ? 'border-red-500 bg-red-50' : 'border-gray-200 hover:border-gray-300'
-                          }`}
+                          className={`w-full pl-4 pr-10 py-3 border-2 rounded-xl transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent ${touched.phone && errors.phone ? 'border-red-500 bg-red-50' : 'border-gray-200 hover:border-gray-300'
+                            }`}
                         />
                         {touched.phone && (
                           <div className="absolute right-3 top-1/2 -translate-y-1/2">
@@ -518,9 +525,8 @@ const SignupPage = () => {
                           onChange={handleChange}
                           onBlur={handleBlur}
                           placeholder="123 Main St, City, State"
-                          className={`w-full pl-4 pr-10 py-3 border-2 rounded-xl transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent ${
-                            touched.address && errors.address ? 'border-red-500 bg-red-50' : 'border-gray-200 hover:border-gray-300'
-                          }`}
+                          className={`w-full pl-4 pr-10 py-3 border-2 rounded-xl transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent ${touched.address && errors.address ? 'border-red-500 bg-red-50' : 'border-gray-200 hover:border-gray-300'
+                            }`}
                         />
                         {touched.address && (
                           <div className="absolute right-3 top-1/2 -translate-y-1/2">

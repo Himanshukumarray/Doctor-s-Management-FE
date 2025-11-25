@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import axiosInstance from "../api/axiosInstance";
-import { useToast } from "../components/ToastProvider";
+import axiosInstance from "../../api/axiosInstance"
+import { useToast } from "../../components/ToastProvider";
 
 export default function AllAppointments() {
   const { showToast } = useToast();

@@ -1,7 +1,10 @@
 import React from 'react';
 import { Search, Calendar, FileText } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
-export default function PatientDashboard({ patientName, onNavigate, appointmentsCount, billsCount }) {
+export default function PatientDashboard({ patientName, appointmentsCount, billsCount }) {
+  const navigate = useNavigate();
+
   return (
     <div className="space-y-6">
       {/* Welcome Section */}
@@ -12,8 +15,10 @@ export default function PatientDashboard({ patientName, onNavigate, appointments
 
       {/* Quick Actions */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+        {/* FIND DOCTORS */}
         <div
-          onClick={() => onNavigate('doctors')}
+          onClick={() => navigate("/patient/available-doctors")}
           className="bg-white p-6 rounded-lg shadow hover:shadow-lg transition cursor-pointer"
         >
           <div className="flex items-center space-x-4">
@@ -27,8 +32,9 @@ export default function PatientDashboard({ patientName, onNavigate, appointments
           </div>
         </div>
 
+        {/* MY APPOINTMENTS */}
         <div
-          onClick={() => onNavigate('appointments')}
+          onClick={() => navigate("/patient/appointments")}
           className="bg-white p-6 rounded-lg shadow hover:shadow-lg transition cursor-pointer"
         >
           <div className="flex items-center space-x-4">
@@ -42,8 +48,9 @@ export default function PatientDashboard({ patientName, onNavigate, appointments
           </div>
         </div>
 
+        {/* BILLS */}
         <div
-          onClick={() => onNavigate('bills')}
+          onClick={() => navigate("/patient/billing")}
           className="bg-white p-6 rounded-lg shadow hover:shadow-lg transition cursor-pointer"
         >
           <div className="flex items-center space-x-4">
@@ -56,6 +63,7 @@ export default function PatientDashboard({ patientName, onNavigate, appointments
             </div>
           </div>
         </div>
+
       </div>
 
       {/* Recent Activity */}

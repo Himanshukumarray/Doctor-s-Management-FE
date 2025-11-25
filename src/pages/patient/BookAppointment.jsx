@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
-import axiosInstance from "../api/axiosInstance";
-import { useToast } from "../components/ToastProvider";
+import axiosInstance from "../../api/axiosInstance"
+import { useToast } from "../../components/ToastProvider";
 
 export default function BookAppointment() {
 
-  const { showToast } = useToast(); // ✅ FIXED
+  const { showToast } = useToast(); 
   const [doctors, setDoctors] = useState([]);
   const [loading, setLoading] = useState(false);
 
@@ -77,7 +77,7 @@ export default function BookAppointment() {
       alert("Failed to book appointment");
     }
 
-    setLoading(false); // ✅ BUTTON RETURNS TO NORMAL
+    setLoading(false); 
   };
 
   return (

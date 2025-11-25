@@ -1,16 +1,16 @@
 import React, { useEffect, useState } from "react";
-import axiosInstance from "../api/axiosInstance";
-import { useToast } from "../components/ToastProvider";
+import axiosInstance from "../../api/axiosInstance"
+import { useToast } from "../../components/ToastProvider";
 
-export default function AllDoctors() {
-  const [doctors, setDoctors] = useState([]);
+export default function AllPatients() {
+  const [patients, setPatients] = useState([]);
   const [loading, setLoading] = useState(true);
 
   const { showToast } = useToast();
 
   const role = localStorage.getItem("role");
 
-  // Double safety (routing already protected, but UI should block too)
+  // Safety check (ProtectedRoute also handles it)
   if (role !== "ADMIN") {
     return (
       <div className="text-center text-red-600 mt-10 text-xl">
@@ -19,55 +19,53 @@ export default function AllDoctors() {
     );
   }
 
-  // Fetch all doctors
-  const fetchDoctors = async () => {
+  // Fetch all patients
+  const fetchPatients = async () => {
     try {
-      const res = await axiosInstance.get("/admin/all-doctors");
-      setDoctors(res.data);
+      const res = await axiosInstance.get("/admin/all-patients");
+      setPatients(res.data);
     } catch (err) {
-      showToast("Failed to load doctors", "error");
+      showToast("Failed to load patients", "error");
     } finally {
       setLoading(false);
     }
   };
 
   useEffect(() => {
-    fetchDoctors();
+    fetchPatients();
   }, []);
 
   if (loading) return <div className="text-center mt-10">Loading...</div>;
 
   return (
     <div className="p-6">
-      <h2 className="text-2xl font-semibold mb-6">All Doctors</h2>
+      <h2 className="text-2xl font-semibold mb-6">All Patients</h2>
 
-      {doctors.length === 0 ? (
+      {patients.length === 0 ? (
         <div className="text-center text-gray-600 mt-10">
-          No doctors found.
+          No patients found.
         </div>
       ) : (
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          {doctors.map((doctor) => (
+          {patients.map((patient) => (
             <div
-              key={doctor.id}
+              key={patient.id}
               className="p-4 border rounded-lg shadow-sm bg-white"
             >
-              <h3 className="text-lg font-bold">{doctor.name}</h3>
-              <p className="text-gray-700">Email: {doctor.email}</p>
-              <p className="text-gray-700">Phone: {doctor.phone}</p>
-              <p className="text-gray-700">
-                Specialization: {doctor.specialization}
-              </p>
+              <h3 className="text-lg font-bold">{patient.name}</h3>
+              <p className="text-gray-700">Email: {patient.email}</p>
+              <p className="text-gray-700">Phone: {patient.phone}</p>
+
               <p className="text-gray-700 font-medium mt-2">
                 Status:{" "}
                 <span
                   className={`${
-                    doctor.status === "APPROVED"
+                    patient.status === "ACTIVE"
                       ? "text-green-600"
                       : "text-yellow-600"
                   }`}
                 >
-                  {doctor.status}
+                  {patient.status}
                 </span>
               </p>
             </div>

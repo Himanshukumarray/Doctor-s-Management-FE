@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
-import axiosInstance from "../api/axiosInstance";
-import { useToast } from "../components/ToastProvider";
+import axiosInstance from "../../api/axiosInstance"
+import { useToast } from "../../components/ToastProvider";
 
 export default function DoctorProfile() {
   const { showToast } = useToast();
-  const doctorId = localStorage.getItem("userId");
+  const doctorId = localStorage.getItem("id");
 
   const [loading, setLoading] = useState(true);
   const [saving, setSaving] = useState(false);

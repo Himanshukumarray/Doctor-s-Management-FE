@@ -1,14 +1,11 @@
 import React, { useEffect, useState } from "react";
-import axiosInstance from "../api/axiosInstance";
-import { useToast } from "../components/ToastProvider";
+import axiosInstance from "../../api/axiosInstance";
 
 export default function TodayAppointments() {
-  const { showToast } = useToast();
-
   const [appointments, setAppointments] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  const doctorId = localStorage.getItem("userId");
+  const doctorId = localStorage.getItem("id");
   const today = new Date().toISOString().split("T")[0];
 
   useEffect(() => {
@@ -28,7 +25,7 @@ export default function TodayAppointments() {
 
       setAppointments(todayAppointments);
     } catch (error) {
-      showToast("Failed to load today's appointments", "error");
+      alert("Failed to load today's appointments");
     } finally {
       setLoading(false);
     }
@@ -40,7 +37,7 @@ export default function TodayAppointments() {
         `/appointments/${appointmentId}/status?status=${newStatus}`
       );
 
-      showToast("Status updated successfully!", "success");
+      alert("Status updated successfully!");
 
       // Update UI instantly
       setAppointments((prev) =>
@@ -49,7 +46,7 @@ export default function TodayAppointments() {
         )
       );
     } catch (error) {
-      showToast("Failed to update status", "error");
+      alert("Failed to update status");
     }
   };
 
