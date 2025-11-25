@@ -89,7 +89,7 @@ const Login = () => {
         setTimeout(() => {
           if (data.role === "PATIENT") window.location.href = "/patient";
           else if (data.role === "DOCTOR") window.location.href = "/doctor";
-          else if (data.role === "ADMIN") window.location.href = "/admin/dashboard";
+          else if (data.role === "ADMIN") window.location.href = "/admin";
           else window.location.href = "/";
         }, 1500);
       }

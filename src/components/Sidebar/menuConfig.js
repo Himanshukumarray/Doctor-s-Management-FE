@@ -18,6 +18,7 @@ const menuConfig = {
 
 
   ADMIN: [
+    { label: "Dashboard", path: "/admin" },
     { label: "Pending Doctors", path: "/admin/pending" },
     { label: "All Doctors", path: "/admin/doctors" },
     { label: "All Patients", path: "/admin/patients" },
