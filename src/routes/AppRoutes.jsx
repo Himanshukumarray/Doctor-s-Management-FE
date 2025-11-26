@@ -21,6 +21,8 @@ import DoctorDashboard from "../pages/doctor/DoctorDashboard";
 import TodayAppointments from "../pages/doctor/TodayAppointments";
 import AllAppointments from "../pages/doctor/AllAppointments";
 import DoctorProfile from "../pages/doctor/DoctorProfile";
+import PrescriptionForm from "../pages/doctor/PrescriptionForm";
+import Checkup from "../pages/doctor/Checkup";
 
 // ADMIN PAGES
 import AdminDashboard from "../pages/doctor/DoctorDashboard";
@@ -57,12 +59,14 @@ export default function AppRoutes() {
         <Route path="/doctor/today" element={<TodayAppointments />} />
         <Route path="/doctor/all" element={<AllAppointments />} />
         <Route path="/doctor/profile" element={<DoctorProfile />} />
+        <Route path="/doctor/prescription/:appointmentId" element={<PrescriptionForm />}/>
+        <Route path="/doctor/checkup/:appointmentId" element={<Checkup />} />
 
         {/* ADMIN */}
-          <Route path="/admin" element={<AdminDashboard />} />
-          <Route path="/admin/pending" element={<PendingDoctors />} />
-          <Route path="/admin/doctors" element={<AllDoctors />} />
-          <Route path="/admin/patients" element={<AllPatients />} />
+        <Route path="/admin" element={<AdminDashboard />} />
+        <Route path="/admin/pending" element={<PendingDoctors />} />
+        <Route path="/admin/doctors" element={<AllDoctors />} />
+        <Route path="/admin/patients" element={<AllPatients />} />
       </Route>
     </Routes>
   );
