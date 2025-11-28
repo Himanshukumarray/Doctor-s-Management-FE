@@ -114,13 +114,11 @@ export default function AllAppointments() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50 p-6">
       <div className="max-w-7xl mx-auto">
-        {/* Header */}
         <div className="mb-8">
           <h1 className="text-4xl font-bold text-gray-900 mb-2">Appointments</h1>
           <p className="text-gray-600">Manage your patient appointments and prescriptions</p>
         </div>
 
-        {/* Appointments Grid */}
         {appointments.length === 0 ? (
           <div className="bg-white rounded-2xl shadow-sm p-12 text-center">
             <Stethoscope className="w-16 h-16 text-gray-300 mx-auto mb-4" />
