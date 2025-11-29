@@ -250,7 +250,6 @@ export default function AllAppointments() {
                     />
                   </div>
 
-                  {/* Follow-up Date */}
                   <div>
                     <label className="block text-sm font-semibold text-gray-700 mb-2">
                       Follow-up Date
