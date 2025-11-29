@@ -263,7 +263,6 @@ export default function AllAppointments() {
                     />
                   </div>
 
-                  {/* Medicines Section */}
                   <div>
                     <div className="flex items-center justify-between mb-3">
                       <h4 className="text-lg font-semibold text-gray-900">Medicines</h4>
