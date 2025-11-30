@@ -137,7 +137,6 @@ export default function Checkup() {
         + Add Medicine
       </button>
 
-      {/* Submit */}
       <button
         onClick={handleSubmit}
         className="bg-green-600 text-white px-6 py-3 rounded-lg font-semibold"
