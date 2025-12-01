@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import axiosInstance from "../../api/axiosInstance"; // <-- Add this
+import axiosInstance from "../../api/axiosInstance"; 
 import { Calendar, Users, Clock, CheckCircle, TrendingUp, Activity, ArrowRight, Stethoscope, FileText, User } from "lucide-react";
 
 export default function DoctorDashboard() {
