@@ -203,7 +203,6 @@ export default function AllAppointments() {
                 </button>
               </div>
 
-              {/* Modal Body */}
               <div className="overflow-y-auto flex-1 p-6">
                 <div className="space-y-5">
                   {/* Diagnosis */}
