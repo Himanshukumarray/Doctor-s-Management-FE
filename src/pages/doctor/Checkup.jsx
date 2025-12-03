@@ -92,7 +92,7 @@ export default function Checkup() {
         onChange={(e) => setFormData({ ...formData, symptoms: e.target.value })}
       />
 
-      {/* Advice */}
+      
       <textarea
         placeholder="Advice"
         className="w-full p-3 border rounded mb-3"
