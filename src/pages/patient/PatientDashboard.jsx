@@ -28,8 +28,6 @@ export default function PatientDashboard({ patientName, appointmentsCount, bills
             </div>
           </div>
         </div>
-
-        {/* MY APPOINTMENTS */}
         <div
           onClick={() => navigate("/patient/appointments")}
           className="bg-white p-6 rounded-lg shadow hover:shadow-lg transition cursor-pointer"
@@ -45,7 +43,6 @@ export default function PatientDashboard({ patientName, appointmentsCount, bills
           </div>
         </div>
 
-        {/* BILLS */}
         <div
           onClick={() => navigate("/patient/billing")}
           className="bg-white p-6 rounded-lg shadow hover:shadow-lg transition cursor-pointer"
