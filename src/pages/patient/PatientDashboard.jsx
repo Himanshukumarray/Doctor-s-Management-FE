@@ -59,8 +59,6 @@ export default function PatientDashboard({ patientName, appointmentsCount, bills
         </div>
 
       </div>
-
-      {/* Recent Activity */}
       <div className="bg-white p-6 rounded-lg shadow">
         <h2 className="text-xl font-bold mb-4">Recent Activity</h2>
         <p className="text-gray-500">No recent activity to display</p>
