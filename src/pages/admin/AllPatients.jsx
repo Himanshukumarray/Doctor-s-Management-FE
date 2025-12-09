@@ -10,7 +10,6 @@ export default function AllPatients() {
 
   const role = localStorage.getItem("role");
 
-  // Safety check (ProtectedRoute also handles it)
   if (role !== "ADMIN") {
     return (
       <div className="text-center text-red-600 mt-10 text-xl">
