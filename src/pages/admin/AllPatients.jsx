@@ -18,7 +18,7 @@ export default function AllPatients() {
     );
   }
 
-  // Fetch all patients
+  // Fetch all 
   const fetchPatients = async () => {
     try {
       const res = await axiosInstance.get("/admin/all-patients");
