@@ -18,7 +18,6 @@ export default function PendingDoctors() {
     );
   }
 
-  // Fetch pending doctors
   const fetchPendingDoctors = async () => {
     try {
       const res = await axiosInstance.get("/admin/pending-doctors");
