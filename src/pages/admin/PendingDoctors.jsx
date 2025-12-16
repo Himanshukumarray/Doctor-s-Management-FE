@@ -10,7 +10,6 @@ export default function PendingDoctors() {
 
   const role = localStorage.getItem("role");
 
-  // Only admin can access (double safety check)
   if (role !== "ADMIN") {
     return (
       <div className="text-center text-red-600 mt-10 text-xl">
