@@ -33,7 +33,6 @@ export default function PendingDoctors() {
     fetchPendingDoctors();
   }, []);
 
-  // Approve doctor
   const handleApprove = async (id) => {
     try {
       await axiosInstance.put(`/admin/approve/${id}`);
