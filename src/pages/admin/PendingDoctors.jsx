@@ -44,7 +44,6 @@ export default function PendingDoctors() {
     }
   };
 
-  // Reject doctor
   const handleReject = async (id) => {
     try {
       await axiosInstance.put(`/admin/reject/${id}`);
