@@ -91,6 +91,7 @@ export default function AdminDashboard() {
         </div>
       )}
 
+      {/* Recent Activity */}
       <div className="mt-10">
         <h2 className="text-2xl font-semibold mb-4 flex items-center gap-2">
           <Activity size={24} /> Recent System Activity
