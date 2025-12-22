@@ -49,7 +49,6 @@ export default function PendingDoctors() {
       await axiosInstance.put(`/admin/reject/${id}`);
       showToast("Doctor rejected successfully", "success");
 
-      // update UI
       setPendingDoctors((prev) => prev.filter((d) => d.id !== id));
     } catch (err) {
       showToast("Failed to reject doctor", "error");
