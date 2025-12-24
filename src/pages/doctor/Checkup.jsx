@@ -78,7 +78,6 @@ export default function Checkup() {
         <p><b>Time:</b> {appointment.appointmentTime}</p>
       </div>
 
-      {/* Diagnosis */}
       <textarea
         placeholder="Diagnosis"
         className="w-full p-3 border rounded mb-3"
