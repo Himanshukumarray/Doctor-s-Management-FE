@@ -84,6 +84,7 @@ export default function Checkup() {
         onChange={(e) => setFormData({ ...formData, diagnosis: e.target.value })}
       />
 
+      {/* Symptoms */}
       <textarea
         placeholder="Symptoms"
         className="w-full p-3 border rounded mb-3"
