@@ -95,7 +95,7 @@ export default function DoctorDashboard() {
     },
   ];
 
-  // const recentAppointments = appointments.slice(0, 5);
+  const recentAppointments = appointments.slice(0, 5);
 
   if (loading) {
     return (
