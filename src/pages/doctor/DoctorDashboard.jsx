@@ -110,7 +110,7 @@ export default function DoctorDashboard() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 p-6">
-      {/* <div className="max-w-7xl mx-auto"> */}
+      <div className="max-w-7xl mx-auto">
         <div className="mb-8">
           <div className="flex items-center gap-3 mb-2">
             <div className="p-3 bg-blue-600 rounded-xl">
