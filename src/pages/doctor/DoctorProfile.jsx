@@ -67,6 +67,7 @@ export default function DoctorProfile() {
       ) : (
         <div className="space-y-4">
 
+          {/* Name */}
           <div>
             <label className="block text-sm font-medium mb-1">Full Name</label>
             <input
