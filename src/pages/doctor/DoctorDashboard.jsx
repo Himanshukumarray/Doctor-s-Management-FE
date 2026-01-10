@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import axiosInstance from "../../api/axiosInstance"; 
+import axiosInstance from "../../api/axiosInstance";
 import { Calendar, Users, Clock, CheckCircle, TrendingUp, Activity, ArrowRight, Stethoscope, FileText, User } from "lucide-react";
 
 export default function DoctorDashboard() {
@@ -30,34 +30,34 @@ export default function DoctorDashboard() {
   const pending = appointments.filter((a) => a.status === "PENDING").length;
 
   const stats = [
-    { 
-      title: "Total Appointments", 
-      value: total, 
-      icon: Calendar, 
+    {
+      title: "Total Appointments",
+      value: total,
+      icon: Calendar,
       color: "from-blue-500 to-blue-600",
       bgColor: "bg-blue-50",
       iconColor: "text-blue-600"
     },
-    { 
-      title: "Today's Appointments", 
-      value: today, 
-      icon: Clock, 
+    {
+      title: "Today's Appointments",
+      value: today,
+      icon: Clock,
       color: "from-green-500 to-green-600",
       bgColor: "bg-green-50",
       iconColor: "text-green-600"
     },
-    { 
-      title: "Pending", 
-      value: pending, 
-      icon: Activity, 
+    {
+      title: "Pending",
+      value: pending,
+      icon: Activity,
       color: "from-yellow-500 to-yellow-600",
       bgColor: "bg-yellow-50",
       iconColor: "text-yellow-600"
     },
-    { 
-      title: "Completed", 
-      value: completed, 
-      icon: CheckCircle, 
+    {
+      title: "Completed",
+      value: completed,
+      icon: CheckCircle,
       color: "from-purple-500 to-purple-600",
       bgColor: "bg-purple-50",
       iconColor: "text-purple-600"
@@ -116,7 +116,7 @@ export default function DoctorDashboard() {
             <div className="p-3 bg-blue-600 rounded-xl">
               <Stethoscope className="w-8 h-8 text-white" />
             </div>
-            <div> 
+            <div>
               <h1 className="text-4xl font-bold text-gray-800">Doctor Dashboard</h1>
               <p className="text-gray-600 mt-1">Welcome back! Here's your overview</p>
             </div>
@@ -200,11 +200,10 @@ export default function DoctorDashboard() {
                           <p className="font-semibold text-gray-800 text-sm">{appointment.patientName}</p>
                           <p className="text-xs text-gray-600">{appointment.appointmentDate}</p>
                         </div>
-                        <span className={`px-3 py-1 rounded-full text-xs font-semibold ${
-                          appointment.status === "COMPLETED" 
-                            ? "bg-green-100 text-green-700" 
+                        <span className={`px-3 py-1 rounded-full text-xs font-semibold ${appointment.status === "COMPLETED"
+                            ? "bg-green-100 text-green-700"
                             : "bg-yellow-100 text-yellow-700"
-                        }`}>
+                          }`}>
                           {appointment.status}
                         </span>
                       </div>

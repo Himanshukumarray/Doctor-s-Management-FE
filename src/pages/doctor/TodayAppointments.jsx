@@ -39,7 +39,6 @@ export default function TodayAppointments() {
 
       alert("Status updated successfully!");
 
-      // Update UI instantly
       setAppointments((prev) =>
         prev.map((item) =>
           item.id === appointmentId ? { ...item, status: newStatus } : item
