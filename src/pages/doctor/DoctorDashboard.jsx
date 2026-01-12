@@ -30,14 +30,14 @@ export default function DoctorDashboard() {
   const pending = appointments.filter((a) => a.status === "PENDING").length;
 
   const stats = [
-    // {
-    //   title: "Total Appointments",
-    //   value: total,
-    //   icon: Calendar,
-    //   color: "from-blue-500 to-blue-600",
-    //   bgColor: "bg-blue-50",
-    //   iconColor: "text-blue-600"
-    // },
+    {
+      title: "Total Appointments",
+      value: total,
+      icon: Calendar,
+      color: "from-blue-500 to-blue-600",
+      bgColor: "bg-blue-50",
+      iconColor: "text-blue-600"
+    },
     {
       title: "Today's Appointments",
       value: today,
