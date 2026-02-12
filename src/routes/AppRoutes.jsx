@@ -25,7 +25,7 @@ import PrescriptionForm from "../pages/doctor/PrescriptionForm";
 import Checkup from "../pages/doctor/Checkup";
 
 // ADMIN PAGES
-import AdminDashboard from "../pages/doctor/DoctorDashboard";
+import AdminDashboard from "../pages/admin/AdminDashboard";
 import PendingDoctors from "../pages/admin/PendingDoctors";
 import AllDoctors from "../pages/admin/AllDoctors";
 import AllPatients from "../pages/admin/AllPatients";

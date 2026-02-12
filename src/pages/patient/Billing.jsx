@@ -1,7 +1,6 @@
-import React from 'react';
 import { FileText, DollarSign } from 'lucide-react';
 
-export default function Billing({ bills }) {
+export default function Billing({ bills = [] }) {
   const getStatusColor = (status) => {
     return status === 'Paid'
       ? 'bg-green-100 text-green-800'

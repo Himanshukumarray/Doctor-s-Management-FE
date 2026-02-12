@@ -4,7 +4,7 @@ import { Outlet } from "react-router-dom";
 
 export default function CommonLayout() {
   return (
-    <div className="flex">
+    <div className="flex ">
       {/* Left Sidebar */}
       <Sidebar />
 

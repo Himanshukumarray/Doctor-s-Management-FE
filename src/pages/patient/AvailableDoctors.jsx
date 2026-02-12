@@ -9,11 +9,11 @@ export default function AvailableDoctors({ onBookDoctor }) {
 
   const specialties = [
     "all",
-    "Cardiology",
-    "Dermatology",
+    "Cardiologist",
+    "Dermatologist",
     "Pediatrics",
-    "Orthopedics",
-    "Neurology",
+    "ophthalmologist",
+    "Neurologist",
   ];
 
   // Fetch doctors automatically

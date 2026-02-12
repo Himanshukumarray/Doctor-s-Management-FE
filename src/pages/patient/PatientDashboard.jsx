@@ -15,7 +15,7 @@ export default function PatientDashboard({ patientName, appointmentsCount, bills
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
 
         <div
-          onClick={() => navigate("/patient/available-doctors")}
+          onClick={() => navigate("/patient/doctors")}
           className="bg-white p-6 rounded-lg shadow hover:shadow-lg transition cursor-pointer"
         >
           <div className="flex items-center space-x-4">
