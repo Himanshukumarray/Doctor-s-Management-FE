@@ -41,7 +41,6 @@ export default function Sidebar() {
 
   const SidebarContent = () => (
     <>
-      {/* Header Section */}
       <div className="p-6 border-b border-gray-100 bg-[#BFC9D1]">
         <div className="flex items-center justify-between mb-4">
           <div className={`flex items-center gap-3 ${isCollapsed ? 'justify-center' : ''}`}>
