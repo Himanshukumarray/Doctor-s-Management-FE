@@ -41,7 +41,7 @@ export default function Sidebar() {
 
   const SidebarContent = () => (
     <>
-      <div className="p-6 border-b border-gray-100 bg-[#BFC9D1]">
+       <div className="p-6 border-b border-gray-100 bg-[#BFC9D1]">
         <div className="flex items-center justify-between mb-4">
           <div className={`flex items-center gap-3 ${isCollapsed ? 'justify-center' : ''}`}>
             <div className="w-10 h-10 bg-gradient-to-br from-blue-600 to-indigo-600 rounded-xl flex items-center justify-center shadow-lg">
