@@ -10,7 +10,6 @@ export default function ProtectedRoute({ children }) {
     return <Navigate to="/login" replace />;
   }
 
-  // Role-based access validation
   if (
     (role === "PATIENT" && !location.pathname.startsWith("/patient")) ||
     (role === "DOCTOR" && !location.pathname.startsWith("/doctor")) ||
