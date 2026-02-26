@@ -15,7 +15,6 @@ export default function ProtectedRoute({ children }) {
     (role === "DOCTOR" && !location.pathname.startsWith("/doctor")) ||
     (role === "ADMIN" && !location.pathname.startsWith("/admin"))
   ) {
-    // Redirect user to their correct dashboard
     return <Navigate to={`/${role.toLowerCase()}/dashboard`} replace />;
   }
 
