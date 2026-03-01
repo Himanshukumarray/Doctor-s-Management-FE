@@ -150,6 +150,7 @@ export default function AdminDashboard() {
                   className="group relative bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden transform hover:-translate-y-1"
                   style={{ animationDelay: `${index * 100}ms` }}
                 >
+                  {/* Gradient Background Accent */}
                   <div className={`absolute top-0 right-0 w-32 h-32 bg-gradient-to-br ${card.gradient} opacity-10 rounded-full -mr-16 -mt-16 group-hover:scale-150 transition-transform duration-500`}></div>
                   
                   <div className="relative p-6">
