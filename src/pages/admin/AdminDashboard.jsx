@@ -104,6 +104,7 @@ export default function AdminDashboard() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 p-6">
+      {/* Header Section */}
       <div className="mb-8">
         <div className="flex items-center justify-between">
           <div>
